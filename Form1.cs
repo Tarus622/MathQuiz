@@ -129,7 +129,7 @@ namespace MathQuiz
                                 "Congratulations!");
                 startButton.Enabled = true;
             }
-            else if (timeLeft > 0)
+            else if (timeLeft >= 7)
             {
                 // If CheckTheAnswer() returns false, keep counting
                 // down. Decrease the time left by one second and 
@@ -137,6 +137,12 @@ namespace MathQuiz
                 // Time Left label.
                 timeLeft = timeLeft - 1;
                 timeLabel.Text = timeLeft + " seconds";
+            }
+            else if (timeLeft > 0 && timeLeft < 7)
+            {
+                timeLeft = timeLeft - 1;
+                timeLabel.Text = timeLeft + " seconds";
+                timeLabel.BackColor = Color.Red;
             }
             else
             {
@@ -150,6 +156,18 @@ namespace MathQuiz
                 product.Value = multiplicand * multiplier;
                 quotient.Value = dividend / divisor;
                 startButton.Enabled = true;
+            }
+        }
+
+        private void answer_Enter(object sender, EventArgs e)
+        {
+            // Select the whole answer in the NumericUpDown controll.
+            NumericUpDown answerBox = sender as NumericUpDown;
+
+            if (answerBox != null)
+            {
+                int lengthOfAnswer = answerBox.Value.ToString().Length;
+                answerBox.Select(0, lengthOfAnswer);
             }
         }
     }

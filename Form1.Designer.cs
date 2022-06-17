@@ -61,6 +61,7 @@
             // 
             // timeLabel
             // 
+            this.timeLabel.BackColor = System.Drawing.SystemColors.Control;
             this.timeLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.timeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timeLabel.Location = new System.Drawing.Point(270, 9);
@@ -125,6 +126,7 @@
             this.sum.Name = "sum";
             this.sum.Size = new System.Drawing.Size(100, 41);
             this.sum.TabIndex = 1;
+            this.sum.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // difference
             // 
@@ -133,6 +135,7 @@
             this.difference.Name = "difference";
             this.difference.Size = new System.Drawing.Size(100, 41);
             this.difference.TabIndex = 2;
+            this.difference.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label3
             // 
@@ -181,6 +184,7 @@
             this.product.Name = "product";
             this.product.Size = new System.Drawing.Size(100, 41);
             this.product.TabIndex = 3;
+            this.product.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label8
             // 
@@ -229,6 +233,7 @@
             this.quotient.Name = "quotient";
             this.quotient.Size = new System.Drawing.Size(100, 41);
             this.quotient.TabIndex = 4;
+            this.quotient.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label12
             // 
@@ -291,6 +296,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(482, 425);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.quotient);
